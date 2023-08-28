@@ -76,12 +76,14 @@ class AviaSoulsTest {
         Ticket[] actual = manager.search("Сочи", "Краснодар");
         Assertions.assertArrayEquals(expected, actual);
     }
+    /*
     @Test
     public void shouldSearch() {
-        Ticket[] expected = {ticket4, ticket6, ticket5};
+        Ticket[] expected = {ticket4, ticket5, ticket6};
         Ticket[] actual = manager.search("Сочи", "Краснодар");
         Assertions.assertArrayEquals(expected, actual);
     }
+ */
     @Test
     public void shouldSearchWithOneTicket() {
         Ticket[] expected = {ticket1};

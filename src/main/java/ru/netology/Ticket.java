@@ -51,6 +51,7 @@ public class Ticket implements Comparable<Ticket> {
     public int hashCode() {
         return Objects.hash(from, to, price, timeFrom, timeTo);
     }
+
     @Override
     public int compareTo(Ticket o) {
         if (this.price < o.price) {
