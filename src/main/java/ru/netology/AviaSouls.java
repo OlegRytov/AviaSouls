@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class AviaSouls {
-    private static Ticket[] tickets = new Ticket[0];
+    private Ticket[] tickets = new Ticket[0];
 
     /**
      * Вспомогательный метод для имитации добавления элемента в массив
@@ -32,7 +32,7 @@ public class AviaSouls {
         tickets = addToArray(tickets, ticket);
     }
 
-    public static Ticket[] findAll() {
+    public Ticket[] findAll() {
         return tickets;
     }
 

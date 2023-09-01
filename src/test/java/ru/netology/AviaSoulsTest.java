@@ -25,24 +25,28 @@ class AviaSoulsTest {
         manager.add(ticket5);
         manager.add(ticket6);
     }
+
     @Test
     public void shouldCompareWithMin() {
         int expected = -1;
         int actual = ticket4.compareTo(ticket3);
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldCompareTwoIdentical() {
         int expected = 0;
         int actual = ticket2.compareTo(ticket4);
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldCompareWithMax() {
         int expected = 1;
         int actual = ticket3.compareTo(ticket1);
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldComparatorWithMin() {
         int expected = -1;
@@ -56,6 +60,7 @@ class AviaSoulsTest {
         int actual = ticketComparator.compare(ticket4, ticket1);
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldComparatorWithMax() {
         int expected = 1;
@@ -66,7 +71,7 @@ class AviaSoulsTest {
     @Test
     public void shouldFindAllTickets() {
         Ticket[] expected = {ticket1, ticket2, ticket3, ticket4, ticket5, ticket6};
-        Ticket[] actual = AviaSouls.findAll();
+        Ticket[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -76,20 +81,14 @@ class AviaSoulsTest {
         Ticket[] actual = manager.search("Сочи", "Краснодар");
         Assertions.assertArrayEquals(expected, actual);
     }
-    /*
-    @Test
-    public void shouldSearch() {
-        Ticket[] expected = {ticket4, ticket5, ticket6};
-        Ticket[] actual = manager.search("Сочи", "Краснодар");
-        Assertions.assertArrayEquals(expected, actual);
-    }
- */
+
     @Test
     public void shouldSearchWithOneTicket() {
         Ticket[] expected = {ticket1};
         Ticket[] actual = manager.search("Санкт-Петербург", "Москва");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchWithNoTicket() {
         Ticket[] expected = {};
@@ -97,18 +96,21 @@ class AviaSoulsTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchAndSort() {
         Ticket[] expected = {ticket4, ticket6, ticket5};
         Ticket[] actual = manager.searchAndSortBy("Сочи", "Краснодар", ticketComparator);
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchAndSortWithOneTicket() {
         Ticket[] expected = {ticket3};
         Ticket[] actual = manager.searchAndSortBy("Екатеринбург", "Челябинск", ticketComparator);
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchAndSortWithNoTicket() {
         Ticket[] expected = {};
